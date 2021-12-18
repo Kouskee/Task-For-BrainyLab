@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DamageControl : MonoBehaviour, IDamage
 {
-    [SerializeField] private Text text;
+    [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameManager gameManager;
 
     int i = 0;
@@ -14,7 +14,7 @@ public class DamageControl : MonoBehaviour, IDamage
     {
         i += 1;
         if (i < 100)
-            text.text = i.ToString() + ":";
+            text.text = i.ToString();
         else
             gameManager.EndGame();
     }

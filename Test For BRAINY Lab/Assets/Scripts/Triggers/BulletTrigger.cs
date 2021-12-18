@@ -12,7 +12,7 @@ public class BulletTrigger : MonoBehaviour
         if (collision.gameObject.GetComponent(typeof(IDamage)))
         {
             character = (IDamage)collision.gameObject.GetComponent(typeof(IDamage));
-            character.Damage();
+            character?.Damage();
 
             FindObjectOfType<GameManager>()?.CheckTextChang();
         }

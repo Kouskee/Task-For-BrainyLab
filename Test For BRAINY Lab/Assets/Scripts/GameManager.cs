@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     [SerializeField] private float restartDelay = 1f;
     [SerializeField] private Transform SpawnEnemy, SpawnHero, Hero, Enemy;
-    [SerializeField] private Text ScoreEnemy, ScoreHero;
+    [SerializeField] private TextMeshProUGUI ScoreEnemy, ScoreHero;
     string startScoreEnemy, startScoreHero;
 
     private void Start()
