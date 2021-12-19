@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEn : MonoBehaviour
+public class AttackEn : Shot
 {
     [SerializeField] private Transform _gun;
     [SerializeField] private Transform _hero;
@@ -26,9 +26,7 @@ public class AttackEn : MonoBehaviour
     IEnumerator Shot()
     {
         canShoot = false;
-        GameObject newBullet = Instantiate(_prefabBullet, _gun.transform.position, _gun.transform.localRotation);
-        newBullet.transform.Translate(_gun.transform.forward * 2f);
-        newBullet.GetComponent<Rigidbody>().velocity = _gun.transform.forward * 30f;
+        Shooting(_gun, _prefabBullet);
         yield return new WaitForSeconds(1f);
         canShoot = true;
     }

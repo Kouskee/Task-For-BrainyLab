@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Shooting : Shot
 {
     [SerializeField] private GameObject _prefabBullet;
     [SerializeField] private Transform Gun;
@@ -17,8 +17,6 @@ public class Shooting : MonoBehaviour
 
     void Shot()
     {
-        GameObject newBullet = Instantiate(_prefabBullet, Gun.transform.position, Gun.transform.localRotation);
-        newBullet.transform.Translate(Gun.transform.forward * 2f);
-        newBullet.GetComponent<Rigidbody>().velocity = Gun.transform.forward * 30f;
+        Shooting(Gun, _prefabBullet);
     }
 }
