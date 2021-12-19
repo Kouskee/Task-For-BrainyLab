@@ -7,7 +7,6 @@ public class AttackEn : MonoBehaviour
     [SerializeField] private Transform _gun;
     [SerializeField] private Transform _hero;
     [SerializeField] private GameObject _prefabBullet;
-    [SerializeField] private FollowToHero followToHero;
 
     bool canShoot = true;
 
@@ -18,19 +17,9 @@ public class AttackEn : MonoBehaviour
             RaycastHit hit;
             Ray ray = new Ray(_gun.position, _gun.forward);
             if (Physics.Raycast(ray, out hit, 100f))
-            {
                 if (hit.collider.transform == _hero)
-                {
-                    followToHero.obstacle = false;
                     if (canShoot)
                         StartCoroutine(Shot());
-                }
-            }
-            if(Physics.Raycast(_gun.position, _hero.position, out hit, 100f))
-            {
-                if (hit.collider.transform != _hero)
-                    followToHero.obstacle = true;  
-            }
         }
     }
 
