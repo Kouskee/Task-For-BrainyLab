@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8603742110521188809}
   - component: {fileID: 2781222939196408211}
   - component: {fileID: 6705695288327193379}
+  - component: {fileID: 2620344725243765776}
   m_Layer: 3
   m_Name: Bullet
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6315643111808924634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 1.69, z: -2.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.17085955, y: 0.17085955, z: 0.34932235}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,7 +112,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &6705695288327193379
 MonoBehaviour:
@@ -126,3 +127,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisRB: {fileID: 2781222939196408211}
+--- !u!208 &2620344725243765776
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315643111808924634}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 2, y: 0.5, z: 2}
+  m_MoveThreshold: 1.5
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0
