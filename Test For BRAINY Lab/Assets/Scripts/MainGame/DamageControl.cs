@@ -6,7 +6,6 @@ using UnityEngine;
 public class DamageControl : MonoBehaviour, IDamage
 {
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private GameManager gameManager;
 
     int i = 0;
 
@@ -16,11 +15,11 @@ public class DamageControl : MonoBehaviour, IDamage
         if (i < 100)
             text.text = i.ToString();
         else
-            gameManager.EndGame();
+            FindObjectOfType<GameManager>()?.EndGame();
     }
 
     private void OnDestroy()
     {
-        gameManager.EndGame();
+        FindObjectOfType<GameManager>()?.EndGame();  
     }
 }
