@@ -2,19 +2,17 @@ using UnityEngine;
 
 public class BulletTrigger : MonoBehaviour
 {
-    IDamage character;
     [SerializeField] Rigidbody thisRB;
     Vector3 lastVelosity;
     float bulletSpeed;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent(typeof(IDamage)))
+        if (collision.gameObject.TryGetComponent<IDamage>(out var character))
         {
-            character = (IDamage)collision.gameObject.GetComponent(typeof(IDamage));
-            character?.Damage();
+            character.Damage();
 
-            FindObjectOfType<GameManager>()?.CheckTextChang();
+            FindObjectOfType<GameManager>().CheckTextChang();
         }
         else
         {
